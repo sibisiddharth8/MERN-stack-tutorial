@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import { Box, Button, Container, Heading, Input, VStack } from '@chakra-ui/react';
+import { Box, Button, Container, Heading, Input, VStack} from '@chakra-ui/react';
+import { Toaster, toaster } from "../components/ui/toaster.jsx"
 import { useProductStore } from '../store/product.js'
 
 function CreatePage() {
@@ -14,8 +15,22 @@ function CreatePage() {
 
   const handleAddProduct = async () => {
     const { success, message } = await createProduct(newProduct);
-    console.log("Success", success);
-    console.log("Message", message);
+    if (!success) {
+      toaster.create({
+        title: message,
+        duration: 2000,
+      });
+    } else {
+      toaster.create({
+        title: "Product created successfully",
+        duration: 2000,
+      });
+      setNewProduct({
+        name: "",
+        price: "",
+        image: "",
+      });
+    }
   }
 
   return (
