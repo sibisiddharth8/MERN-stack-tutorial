@@ -48,9 +48,9 @@ function Navbar() {
             </Link>
 
             {/* Toggle Dark/Light Mode */}
-            <Button onClick={toggleColorMode} size="sm">
+            {/* <Button onClick={toggleColorMode} size="sm">
               {isDarkMode ? "🌞 Mode" : "🌙 Mode"}
-            </Button>
+            </Button> */}
           </HStack>
         </Flex>
       </Container>
