@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Box, Button, Container, Heading, Input, VStack} from '@chakra-ui/react';
+import { Box, Button, Container, Heading, Input, VStack } from '@chakra-ui/react';
 import { Toaster, toaster } from "../components/ui/toaster.jsx"
 import { useProductStore } from '../store/product.js'
 
