@@ -38,7 +38,8 @@ function HomePage() {
           ))}
         </SimpleGrid>
 
-        <Text fontSize={'xl'} textAlign={'center'} fontWeight={'bold'} color={'gray.500'}>
+        {products.length === 0 && (
+          <Text fontSize={'xl'} textAlign={'center'} fontWeight={'bold'} color={'gray.500'}>
           No Products Found!
           <Link to={"/create"}>
             <Text p={1} as='span' color={'blue.500'} _hover={{textDecoration: "underline"}}>
@@ -46,6 +47,7 @@ function HomePage() {
             </Text>
           </Link>
         </Text>
+        )}
       </VStack>
     </Container>
   )
